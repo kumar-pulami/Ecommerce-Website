@@ -1,0 +1,45 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="AdminLayout.master.cs" Inherits="GrpNo6_SmartDigital.AdminLayout" %>
+
+<!DOCTYPE html>
+
+<html>
+<head runat="server">
+    <title></title>
+    <link rel="icon" type="image/x-icon" href="Images/favicon.ico" />
+    <asp:PlaceHolder runat="server">
+        <%: Scripts.Render("~/bundles/modernizr") %>
+    </asp:PlaceHolder>
+
+    <link rel="stylesheet" href="https://site-assets.fontawesome.com/releases/v6.7.1/css/all.css">
+    <link href="../../Content/index.css" rel="stylesheet" />
+    <script src="../Content/bootstrap/dist/js/bootstrap.js"></script>
+</head>
+<body>
+    <div class="main-wrapper admin-layout d-flex">
+        <div class="nav-bar">
+            <div class="logo-content">
+                <h2>Smart Digital</h2>
+            </div>
+
+            <hr />
+
+            <div class="nav-links">
+                <a href="ProductPage.aspx" class="nav-menu selected">
+                    <i class="fa-regular fa-list-radio"></i>
+                    <label class="menu-name">Products</label>
+                </a>
+            </div>
+        </div>
+
+        <div class="main-content-wrapper">
+            <asp:ContentPlaceHolder ID="MainContent" runat="server">
+            </asp:ContentPlaceHolder>
+        </div>
+    </div>
+    <asp:PlaceHolder runat="server">
+        <%: Scripts.Render("~/bundles/MsAjaxJs") %>
+        <%: Scripts.Render("~/bundles/jquery") %>
+        <%: Scripts.Render("~/bundles/WebFormsJs") %>
+    </asp:PlaceHolder>
+</body>
+</html>

@@ -1,0 +1,80 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="CustomerLayout.master.cs" Inherits="GrpNo6_SmartDigital.CustomerLayout" %>
+
+<!DOCTYPE html>
+
+<html lang="en">
+<head runat="server">
+    <title></title>
+    <link rel="icon" type="image/x-icon" href="Images/favicon.ico" />
+    <asp:PlaceHolder runat="server">
+        <%: Scripts.Render("~/bundles/modernizr") %>
+    </asp:PlaceHolder>
+
+    <link rel="stylesheet" href="https://site-assets.fontawesome.com/releases/v6.7.1/css/all.css">
+    <link href="../../Content/index.css" rel="stylesheet" />
+    <script src="../Content/bootstrap/dist/js/bootstrap.js"></script>
+</head>
+<body>
+    <div class="customer-wrapper">
+        <form runat="server">
+            <div class="header">
+                <a href="HomePage.aspx">
+                    <img class="me-5 ms-3" src="Images/full-size-logo.png" alt="Smart Digital" height="50">
+                </a>
+                <asp:DropDownList ID="CategoryDropDownList" runat="server" DataTextField="Category" DataValueField="Category" DataSourceID="CategorySqlDataSource" AutoPostBack="True" OnDataBound="ddlCategory_DataBound" OnSelectedIndexChanged="CategoryDropDownList_SelectedIndexChanged" />
+                <asp:SqlDataSource runat="server" ConnectionString="<%$ ConnectionStrings:ConnectionString %>" SelectCommand="SELECT DISTINCT Category FROM Product" ID="CategorySqlDataSource"></asp:SqlDataSource>
+                <asp:TextBox ID="txtSearch" runat="server" placeholder="Search..." />
+                <i class="fa-regular fa-magnifying-glass" onclick="document.getElementById('btnSearch').click();"></i>
+                <asp:Button ID="btnSearch" runat="server" Text="Search" OnClick="btnSearch_Click" Style="display: none" />
+                <a href="LoginPage.aspx">Log In</a>
+                <a href="CartPage.aspx" class="text-decoration-none">
+                    <i class="fa-regular fa-cart-shopping"></i>
+                </a>
+            </div>
+            <div class="customer-content">
+                <asp:ContentPlaceHolder ID="MainContent" runat="server">
+                </asp:ContentPlaceHolder>
+            </div>
+
+            <div class="footer">
+                <div class="container">
+                    <div class="row pt-4 pb-3">
+                        <div class="col-8 d-flex align-items-center gap-4">
+                            <a class="d-block" href="HomePage.aspx" title="Smart Digital">
+                                <img src="Images/logo-white-transparent.png" alt="Smart Digital" height="170">
+                            </a>
+                            <p class="mb-4 mt-4">
+                                Making Life Simple, Smart, and Friendly with Trusted Electronics!
+                            </p>
+                        </div>
+                        <div class="col-4">
+                            <div class="row">
+                                <div class="col-12">
+                                    <span class="heading-footer">About</span>
+                                    <ul>
+                                        <li>Neerak Jassi: 8965459
+                                        </li>
+                                        <li>Saipraneeth Kumar Kandepu: 8964643
+                                        </li>
+                                        <li>Ramadeep Kaur: 8961688
+                                        </li>
+                                        <li>Ashok Sudbedi: 8972276
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="copyright">
+                        <span>Copyright © 2024 Smart Digital. All Rights Reserved</span>
+                    </div>
+                </div>
+            </div>
+        </form>
+    </div>
+    <asp:PlaceHolder runat="server">
+        <%: Scripts.Render("~/bundles/MsAjaxJs") %>
+        <%: Scripts.Render("~/bundles/WebFormsJs") %>
+    </asp:PlaceHolder>
+</body>
+</html>

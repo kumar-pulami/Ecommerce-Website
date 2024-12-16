@@ -1,0 +1,41 @@
+﻿@import "variables.scss";
+
+.primary-btn {
+    background-color: $primary-black;
+    color: white;
+    border: none;
+    min-width: 150px;
+    width: 180px;
+    height: 45px;
+
+    &:hover {
+        box-shadow: 0 .125rem .5rem #333;
+    }
+}
+
+.secondary-btn {
+    background-color: white;
+    color: $primary-black;
+    border: 1px solid $primary-black;
+    min-width: 150px;
+    width: 180px;
+    height: 45px;
+}
+
+.primary-btn,
+.secondary-btn {
+
+    &:hover {
+        border-radius: 2px;
+    }
+}
+
+.primary-btn-orange {
+    background-color: $primary-orange;
+    color: white;
+    border: none;
+    min-width: 150px;
+    width: 180px;
+    height: 45px;
+    border-radius: 4px;
+}

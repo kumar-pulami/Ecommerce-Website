@@ -1,0 +1,225 @@
+﻿@import "variables.scss";
+
+.customer-wrapper {
+    height: 100vh;
+    width: 100%;
+
+    .header {
+        height: 60px;
+        width: 100%;
+        background-color: $primary-orange;
+        color: white;
+        display: flex;
+        align-items: center;
+        gap: 20px;
+        padding: 0 30px;
+        position: sticky;
+        top: 0;
+        z-index: 5;
+
+        select {
+            width: 100px;
+            min-width: fit-content;
+            margin-left: 20px;
+            margin-right: -20px;
+            border-top-right-radius: 0px !important;
+            border-bottom-right-radius: 0px !important;
+            background-color: whitesmoke;
+
+            &:hover {
+                cursor: pointer;
+            }
+        }
+
+        input {
+            border-top-left-radius: 0px !important;
+            border-bottom-left-radius: 0px !important;
+            padding: inherit 10px;
+        }
+
+        label,
+        a,
+        i {
+            display: block;
+            min-width: fit-content;
+        }
+
+        i {
+            font-size: 20px;
+        }
+
+        a {
+            color: white;
+            text-decoration: none;
+            font-size: 18px;
+
+            &:hover {
+                text-decoration: underline;
+            }
+        }
+
+        select,
+        input {
+            border: none;
+            border-radius: 4px;
+
+            &:focus,
+            &:focus-visible {
+                outline: none;
+            }
+        }
+
+        .fa-magnifying-glass {
+            margin-left: -10px;
+            margin-right: 20px;
+
+            &:hover {
+                cursor: pointer;
+            }
+        }
+    }
+
+    .customer-content {
+        min-height: calc(100vh - 335px);
+        width: 100%;
+        background-color: #fafafa;
+        padding: 40px;
+
+        h3{
+            color: $primary-orange;
+        }
+
+        .content-wrapper {
+            width: 100%;
+            max-width: 1475px;
+            margin: auto;
+        }
+
+        .card-wrapper {
+            display: grid;
+            margin: auto;
+            grid-template-columns: repeat(auto-fill, minmax(275px, 1fr));
+            margin: auto;
+            gap: 25px;
+
+            .card {
+                height: 450px;
+
+                .card-body {
+                    display: flex;
+                    justify-content: space-between;
+                    flex-direction: column;
+                    padding: 0px;
+
+                    .image-content {
+                        box-shadow: 0 1px 1px #ededed;
+                        width: 100%;
+                        padding: 30px 20px;
+
+                        img {
+                            height: 175px;
+                            object-fit: cover;
+                        }
+                    }
+
+                    .title-content {
+                        height: 140px;
+                        width: 100%;
+                        padding: 20px 20px 0px 20px;
+                        text-align: center;
+                        overflow: hidden;
+
+                        .title {
+                            font-weight: 500;
+                            font-size: 18px;
+                        }
+                    }
+
+                    .price-content {
+                        height: 73px;
+                        width: 100%;
+                        font-weight: 500;
+                        padding-bottom: 25px;
+
+                        i {
+                            color: $primary-orange;
+                            border: 1px solid $primary-orange;
+                            padding: 5px;
+                            border-radius: 4px;
+
+                            &:hover {
+                                cursor: pointer;
+                            }
+                        }
+
+                        label, i {
+                            height: fit-content;
+                            width: fit-content;
+                        }
+
+                        &:hover {
+                            cursor: pointer;
+                        }
+                    }
+
+                    &:hover {
+                        box-shadow: 0 0 16px #e6e6e6;
+                        transform: translateY(-2px);
+                    }
+                }
+            }
+        }
+    }
+
+    .footer {
+        height: 275px;
+        width: 100%;
+        background-color: #333;
+        color: hsla(0, 0%, 100%, .8);
+
+        .heading-footer {
+            color: #fff;
+            display: block;
+            font-family: Outfit, Roboto, Oxygen-Sans, Ubuntu, Cantarell, Helvetica Neue, sans-serif;
+            font-size: 1rem;
+            font-weight: 500;
+            line-height: 1.8125;
+            margin: 0 0 .5rem;
+            text-transform: uppercase;
+        }
+
+        ul {
+            list-style: none;
+            list-style-position: inside;
+            margin: 0;
+            padding: 0;
+        }
+
+        li {
+            padding: .3125rem 0;
+        }
+
+        .copyright {
+            border-top: 1px solid #424242;
+            padding: 20px 0;
+            font-size: .875rem;
+            text-align: center;
+        }
+    }
+}
+
+
+.cart-wrapper {
+    max-width: 1475px;
+    margin: auto;
+
+    table {
+        .fa-circle-minus {
+            color: black;
+
+            &:hover {
+                color: red;
+            }
+        }
+    }
+}

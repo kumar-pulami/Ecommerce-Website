@@ -1,0 +1,84 @@
+﻿@import "variables.scss";
+
+.admin-layout {
+    height: 100vh;
+    width: 100%;
+
+    .nav-bar {
+        background-color: white;
+        width: 260px;
+        height: 100vh;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        z-index: 1;
+        box-shadow: 0px 0 6px 0px rgb(150, 149, 149);
+
+        .logo-content {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 60px;
+            margin: 25px auto;
+        }
+
+        hr {
+            width: 210px;
+            border-top: 2px black solid;
+            margin: 0;
+        }
+
+
+        .nav-links {
+            height: calc(100vh - 62px);
+            width: inherit;
+            display: flex;
+            flex-direction: column;
+            overflow: auto;
+            padding: 20px 20px 0 20px;
+
+            .nav-menu {
+                margin-top: 5px;
+                width: 100%;
+                padding: 15px 0;
+                display: flex;
+                align-items: center;
+                color: $primary-black;
+                text-decoration: none;
+
+                .menu-name {
+                    font-size: 16px;
+                    font-weight: 500;
+                    transition: width 0.5s ease;
+                    transition-delay: 0.3s;
+                }
+
+                .fa-regular {
+                    margin: 0 15px 0 25px;
+                    font-weight: bold;
+                }
+            }
+
+            .nav-menu:hover,
+            .nav-menu .menu-name:hover {
+                cursor: pointer;
+            }
+
+            .nav-menu.selected,
+            .nav-menu:hover {
+                background-color: $primary-orange;
+                border-radius: 5px;
+                color: #ffffff;
+            }
+        }
+    }
+
+    .main-content-wrapper {
+        width: calc(100% - 260px);
+        height: 100vh;
+        z-index: 0;
+        transition: width 0.5s ease;
+        padding: 40px;
+        overflow: auto;
+    }
+}
